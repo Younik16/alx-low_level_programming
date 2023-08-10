@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <unistd.h>
-/* This is a Unix header for C programming language */
+/**
+ * main - Entry point
+ * This is a Unix header for C programming language
+ * Return: 0 (success)
+ */
 int main(void)
 {
-	fput("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
-	return (0);
+write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+	return (1);
 }
