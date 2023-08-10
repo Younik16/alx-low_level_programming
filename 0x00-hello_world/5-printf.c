@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  * This project prints with the printf output style of writting
- * return 0 (success)
+ * Return: 0 (success)
  */
 int main(void)
 {
