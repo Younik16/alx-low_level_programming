@@ -7,18 +7,18 @@
 int numLength(int num)
 {
 	int length = 0;
-	
+
 	if (!num)
 	{
 		return (1);
-		{
-			while (num)
-			{
-				num = num / 10;
-				length += 1;
-			}
-			return (length);
-		}
+	}
+	while (num)
+	{
+	num = num / 10;
+	length += 1;
+	}
+	return (length);
+}
 
 /**
  * main - prints the first 98 fibonaci sequences
@@ -34,12 +34,11 @@ int main(void)
 		if (f1o > 0)
 			printf("%lu", f1o);
 		initial0s = numLength(mx) - 1 - numLength(f1);
-
 		while (f1o > 0 && initial0s > 0)
-				{
-					printf("%i", 0);
-					initial0s--
-				}
+		{
+			printf("%i", 0);
+			initial0s--;
+		}
 		printf("%lu", f1);
 		tmp = (f1 + f2) % mx;
 		tmpo = f1o + f2o + (f1 + f2) / mx;
@@ -53,5 +52,5 @@ int main(void)
 			printf("\n");
 		i++;
 	}
-	return (0);
+	return (0);
 }
