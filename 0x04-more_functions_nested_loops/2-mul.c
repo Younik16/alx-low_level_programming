@@ -9,9 +9,18 @@
 
 int mul(int a, int b)
 {
-	int mult;
+	int mult = 0;
 
 	mult = a * b;
 	printf("%d", mult);
-	return (0);
+	return (mult);
+}
+
+	int main(void)
+{
+
+		int result = mult(int a, int b);
+
+		printf("%d, result);
+		return (0);
 }
