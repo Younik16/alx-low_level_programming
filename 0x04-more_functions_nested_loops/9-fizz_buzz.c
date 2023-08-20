@@ -7,31 +7,28 @@
  */
 int main(void)
 {
-	int i;
+	int a;
 
-	for (i = 1; i <= 100; i++)
+	for (a = 1 ; a <= 100 ; a++)
 	{
-	if (i % 3 == 0 && i % 5 != 0)
-	{
-	printf(" Fizz");
+		if ((a % 3) == 0 && (a % 5) == 0)
+		{
+			printf("FizzBuzz ");
+		}
+		else if (a % 3 == 0)
+		{
+			printf("Fizz ");
+		}
+		else if (a % 5 == 0)
+		{
+			printf("Buzz ");
+		}
+		else
+		{
+			printf("%d ", a);
+		}
 	}
-	else if (i % 5 == 0 && i % 3 != 0)
-	{
-	printf(" Buzz");
-	}
-	else if (i % 3 == 0 && i % 5 == 0)
-	{
-	printf(" FizzBuzz");
-	}
-	else if (i == 1)
-	{
-	printf(" %d", i);
-	}
-	else
-	{
-	printf(" %d", i);
-	}
+	printf("Buzz");
 	printf("\n");
-	}
 	return (0);
 }
