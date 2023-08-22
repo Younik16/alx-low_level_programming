@@ -9,14 +9,19 @@
 
 void puts_half(char *str)
 {
-	size_t i;
-	size_t n = strlen(str);
+	int count = 0, i;
 
-	if (n % 2 == 0)
-		n = strlen(str) / 2;
+	while (count >= 0)
+	{
+		if (str[count] == '\0')
+			break;
+		count++;
+	}
+	if (count % 2 == 1)
+		i = count / 2;
 	else
-		n = (strlen(str) - 1) / 2;
-	for (i = n ; i < strlen(str) ; i++)
-		printf("%c", str[i]);
-	printf("\n");
+		i = (count - 1) / 2;
+	for (i++; i < count; i++)
+		putchar(str[i]);
+	putchar('\n');
 }
