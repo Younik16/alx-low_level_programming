@@ -4,12 +4,20 @@
 /**
  * *_strcpy - C program to copy a string
  * @dest: buffer to copy into
- * @str: source code to copy
+ * @src: source code to copy
  * Return: dest
  */
 
 char *_strcpy(char *dest, char *src)
 {
-	strcpy(dest, src);
+	int count = 0;
+
+	while (count >= 0)
+	{
+	*(dest + count) = *(src + count);
+	if (*(src + count) == '\0')
+	break;
+	count++;
+	}
 	return (dest);
 }
