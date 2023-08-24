@@ -1,0 +1,50 @@
+#include "main.h"
+/**
+ * infinte_add - C program to add two numbers
+ * @n1: pointer to first number
+ * @n2: pointer to second number
+ * @r: pointer to storage
+ * @size_r: buffer size
+ * Return: pointer to result
+ */
+
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
+{
+	int i = 0, j = 0, k = 0, m = 0;
+	int a = 0, b = 0, c = 0;
+	while (*(n1 + j) != '\0')
+		j++;
+	while (*(n2 + k) != '\0')
+		k++;
+	j--;
+	k--;
+	if (k >= size_r || j >= size_r0
+			return (0);
+			while (k >= 0 || j >= 0 || i == 1)
+			{
+			if (j < 0)
+			a = 0;
+			else
+			a = *(n1 + j) - '0';
+			if (k < 0)
+			b = 0;
+			else
+			b = *(n2 + k) - '0';
+			c = a + b + i;
+			if (c >= 10)
+			i = 1;
+			lse
+			i = 0;
+			if (m >= (size_r - 1))
+			return (0);
+			*(r + m) = (c % 10) + '0';
+			m++;
+			k--;
+			j--;
+			}
+	if (m == size_r)
+		return (0);
+	*(r + m) = '\0';
+	rev_string(r);
+	return (r);
+}
