@@ -1,28 +1,34 @@
-#include <ctype.h>
-
+#include "main.h"
+#include <stdio.h>
 /**
- * cap_string - Capitalize all words in a string.
- * @str: Pointer to the string.
- * Return: Pointer to the modified string.
+ * cap_string - C program that capitalizes all words of a string
+ * @str: Parameter
+ * Return: words in capital letters
  */
 char *cap_string(char *str)
 {
-	int j, k;
-	char a[] = {44, 59, 46, 33, 63, 34, 40, 41, 123, 125, 32, 9, 10};
+	int index = 0;
 
-	for (j = 0 ; str[j] != '\0' ; j++)
+	while (str[index])
 	{
-		if (j == 0 && str[j] >= 97 && str[j] <= 122)
-		{
-			str[j] = str[j] - 32;
-		}
-	}
-	for (k = 0 ; a[k] != '\0' ; k++)
-	{
-	if (a[k] == str[j] && (str[j + 1] >= 97 && str[j + 1] <= 122))
-	{
-	str[j + 1] = str[j + 1] - 32;
-	}
+		while (!(str[index] >= 'a' && str[index] <= 'z'))
+			index++;
+		if (str[index - 1] == ' ' ||
+				str[index - 1] == '\t' ||
+				str[index - 1] == '\n' ||
+				str[index - 1] == ',' ||
+				str[index - 1] == ';' ||
+				str[index - 1] == '.' ||
+				str[index - 1] == '!' ||
+				str[index - 1] == '?' ||
+				str[index - 1] == '"' ||
+				str[index - 1] == '(' ||
+				str[index - 1] == ')' ||
+				str[index - 1] == '{' ||
+				str[index - 1] == '}' ||
+				index == 0)
+			str[index] -= 32;
+		index++;
 	}
 	return (str);
 }
