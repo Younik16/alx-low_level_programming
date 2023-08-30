@@ -1,43 +1,39 @@
 #include "main.h"
-#include <stdio.h>
 
 /* function prototype */
-int sqrt_recursive(int n, int start, int end);
+int find_sqrt(int n, int low, int high);
 
 /**
- * _sqrt_recursion - prints natural square root of a number
- * @n: pointer to number
- * Return: natural square root of n, or -1
+ * _sqrt_recursion - Returns the natural square root of a number.
+ * @n: The number for which to find the square root.
+ * Return: The natural square root or -1
  */
-
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	else if (n == 0 || n == 1)
+	if (n == 0 || n == 1)
 		return (n);
-	return (sqrt_recursive(n, 1, n));
+	return (find_sqrt(n, 0, n));
 }
 
 /**
- * sqrt_recursive - function for calculating the square root.
- * @n: pointer to the number
- * @start: The starting value for the search.
- * @end: The ending value for the search.
- * Return: The natural square root of n, or -1 if not found.
+ * find_sqrt - function to find the square root using recursion.
+ * @n: The number for which to find the square root.
+ * @low: The lower bound of the search range.
+ * @high: The upper bound of the search range.
+ * Return: The natural square root or -1
  */
-int sqrt_recursive(int n, int start, int end)
+int find_sqrt(int n, int low, int high)
 {
-	int mid;
+	int mid = (low + high) / 2;
 
-	if (start <= end)
-	{
-		mid = (start + end) / 2;
-		if (mid * mid == n)
-			return (mid);
-		if (mid * mid > n)
-			return (sqrt_recursive(n, start, mid - 1));
-		return (sqrt_recursive(n, mid + 1, end));
-	}
-	return (-1);
+	if (mid * mid == n)
+		return (mid);
+	if (low >= high)
+		return (-1);
+	if (mid * mid > n)
+		return (find_sqrt(n, low, mid - 1));
+	else
+		return (find_sqrt(n, mid + 1, high));
 }
